@@ -56,3 +56,11 @@ set number relativenumber
 let mapleader = ' '
 " nmap <leader>z :!make %:r<cr>
 nmap <leader>z :let file_name = shellescape(expand('%:t:r'))<cr>:let full_file_name = shellescape(expand('%:p'))<cr>:call VimuxRunCommand("gcc full_file_name -o file_name")<cr>
+
+" standart vim doesn't support clipboard option /usr/bin/vim --version
+" change standart vim to brew vim with clipboard sharing feauture
+" /usr/local/bin/vim --version
+set clipboard=unnamed
+
+" fix backspace broblem after install /usr/local/bin/vim as default
+set backspace=indent,eol,start
